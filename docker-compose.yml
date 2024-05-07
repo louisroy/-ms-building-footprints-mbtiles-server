@@ -1,0 +1,13 @@
+version: "3"
+services:
+  ms-building-footprints-mbtiles-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ms-building-footprints-mbtiles-server
+    restart: always
+    environment:
+      TILE_DIR: "/srv/tiles"
+      VERBOSE: true
+    ports:
+      - "8000:8000"
